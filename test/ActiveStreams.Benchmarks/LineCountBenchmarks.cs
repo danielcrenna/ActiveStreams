@@ -46,7 +46,7 @@ namespace ActiveStreams.Benchmarks
 		}
 
 		[Benchmark(OperationsPerInvoke = 1)]
-		public long HQ_LineReader_CountLines()
+		public long ActiveStreams_LineReader_CountLines()
 		{
 			return LineReader.CountLines(File.OpenRead(_files[RowCount]), Encoding.UTF8, null, null,
 				CancellationToken.None);
