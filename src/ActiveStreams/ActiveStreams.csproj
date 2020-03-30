@@ -1,0 +1,41 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <Import Project="$(ProjectDir)..\..\build\package.props" />
+  <Import Project="$(ProjectDir)..\..\build\build.props" />
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+    <Configurations>Debug;Release;Package</Configurations>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+    <LangVersion>8.0</LangVersion>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="TypeKitchen" Version="1.2.11" />
+    <PackageReference Include="Microsoft.ML" Version="1.4.0" />
+    <PackageReference Include="Microsoft.Data.DataFrame" Version="1.0.0-e190816-2" />
+    <PackageReference Include="Rx-Testing" Version="2.2.5" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="ActiveLogging" Version="1.0.2" />
+    <PackageReference Include="Metrics" Version="2.0.2" />
+    <PackageReference Include="System.Memory" Version="4.5.4" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Update="ErrorStrings.Designer.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>ErrorStrings.resx</DependentUpon>
+    </Compile>
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Update="ErrorStrings.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>ErrorStrings.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+  </ItemGroup>
+
+</Project>
